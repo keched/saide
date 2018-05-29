@@ -1,0 +1,21 @@
+{template "content","header"}
+<div class="main">
+	<div class="fl left">
+    	{template "content","sidebar"}
+    </div>
+    <div class="fr right">
+    	<div class="rt"><span class="fr">当前位置: <a href="{siteurl($siteid)}">首页</a>&nbsp;>&nbsp;{preg_replace('/( \> )$/', '', catpos($catid))}</span></div>
+        <div class="con-tt">
+            <h2>{$title}</h2>
+            <p><span>发布时间：{date('Y-m-d',time($inputtime))}</span><span>浏览次数：<span id="hits"></span>次</span>  </p>
+        </div>
+        <div class="news-show">{$content}</div>
+        <div class="pn">
+             <p>上一篇：<a href="{$previous_page[url]}">{$previous_page[title]}</a></p>
+             <p>下一篇：<a href="{$next_page[url]}">{$next_page[title]}</a></p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "content","footer"}

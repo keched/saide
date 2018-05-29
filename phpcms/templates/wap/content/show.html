@@ -1,0 +1,43 @@
+{template "content","header"}
+
+<div class="breadcrumb">
+
+新闻分类
+
+<div>
+
+{loop subcat(3) $v}
+
+<a href="{$v[url]}"><span class="label label-info">{$v[catname]}</span></a>
+
+{/loop}
+
+</div>
+
+</div>
+
+<div style=" height:10px;"></div>
+
+<div class="breadcrumb">
+
+内容详情
+
+</div>
+
+<div class="show">
+
+<div class="con-tt">
+
+    <h2>{$title}</h2>
+
+    <p><span>发布时间：{date('Y-m-d',time($inputtime))}</span><span>浏览次数：<span id="hits"></span>次</span>  </p>
+
+</div>
+
+<div class="content">{$content}</div>
+
+</div>
+
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+
+{template "content","footer"}

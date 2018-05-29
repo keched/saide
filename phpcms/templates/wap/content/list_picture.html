@@ -1,0 +1,28 @@
+{template "content","header"}
+<!--main-->
+<div class="breadcrumb">
+产品分类
+<div>
+{loop subcat($catid) $v}
+<a href="{$v[url]}"><span class="label label-info">{$v[catname]}</span></a>
+{/loop}
+</div>
+</div>
+<div style=" height:10px;"></div>
+
+<div class="breadcrumb">
+{$CAT[catname]}
+</div>
+<div class="clear"></div>
+<div class="i-img">
+	{pc:content action="lists" catid="$catid" num="12" order="id ASC" page="$page"}
+	<ul>
+		{loop $data $r}
+    	<li><a href="{$r[url]}"><img src="{$r[thumb]}"><p>{$r[title]}</p></a></li>
+        {/loop}
+    </ul>
+	<div class="clear"></div>
+	<div class="page">{$pages}</div>
+	{/pc}
+</div>
+{template "content","footer"}

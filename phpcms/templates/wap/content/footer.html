@@ -1,0 +1,35 @@
+<div class="clear"></div>
+
+<div class="footer">
+
+	<p>Copyright © 2015 {$SEO['site_title']}</p>
+
+	{pc:content action="lists" catid="1" num="1" order="id DESC" moreinfo="1"}
+
+	{loop $data $r}
+
+    <p>电话：{$r[hot_tel]} 邮箱：<a href="tel:{$r[hot_tel]}">{$r[email]}</a></p> 
+
+    <p>地址：苏州市吴中区金陵东路268号</p>
+
+	{/loop}
+
+	{/pc}
+
+</div>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?89297472cca9ce9a1c86d347af11c354";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,78 @@
+/**重置样式**/
+body,form,div,span,ul,ol,li,p,pre,dl,dt,dd,em,a,fieldset,legend,address,label,textarea,select,input,figure,table,th,td,b,i{margin:0;padding:0;}
+fieldset,img{border:0;}
+body{margin:0;}
+h1,h2,h3,h4,h5,h6{margin:0; padding:0;}
+ul,li{list-style:none;}
+em,i{font-style:normal;}
+table{border-collapse:separate;border-spacing:0;}
+a{text-decoration:none;color:#000;}
+a:hover{color:none;}
+input,select,img{ vertical-align:middle;}
+hr{border:1xp solid #333;}
+.clear{ clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+
+.logo{width:100%; text-align:center;}
+.logo img{width:100%;}
+nav{width:100%; height:80px; background:#034ea4;}
+nav a{width:25%; height:40px; line-height:40px; text-align:center; display:block; float:left; font-size:0.9em; color:#FFF;}
+.kePublic{background:#FFF;}
+.keBottom{color:#FFF;line-height:28px; text-align:center; font-family:'微软雅黑'; background:repeat-x top left; padding-bottom:25px}
+.keTxtP{font-size:16px; color:#ffffff;}
+.keUrl{color:#FFF; font-size:30px;}
+.keUrl:hover{ text-decoration: underline; color: #FFF; }
+.mKeBanner,.mKeBanner div{text-align:center;}
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+/* 效果CSS开始 */
+.breadcrumb{ margin-bottom:0px;}
+.breadcrumb em{ font-size:0.8em;}
+.slider{display:none}/*用于获取更加体验*/
+.focus span{width:10px;height:10px;margin-right:10px;border-radius:50%;background:#666;font-size:0}
+.focus span.current{background:#fff}
+/* 效果CSS结束 */
+.i-img ul li{width:50%; float:left; text-align:center; margin-bottom:10px;}
+.i-img ul li img{width:100%; width:85%; padding:5%; border:1px solid #CCC; border-radius:3px; height:100px;}
+.i-news{width:100%;}
+.i-news ul li{ margin:3% 5%; border-bottom:1px dashed #CCC; list-style:square; list-style-position:inside;}
+.i-news ul li span{ float:right;}
+.footer{ padding-top:5%; padding-bottom:5%; background:#034ea4; text-align:center; color:#FFF;}
+.footer p{ font-size:1em;}
+.con-tt{ margin-bottom:20px;margin-top:10px;}
+.con-tt h2{ text-align:center; margin-bottom:10px;color:#666;}
+.con-tt p{ text-align:center; font-size:13px; color:#666;}
+.con-tt p span{ margin-right:20px;}
+.content{width:98%; padding:1%;}
+.content img{max-width:100%;max-height:300px;}
+/* 分页page样式 style*/
+.page{ margin-top:20px; margin-bottom:20px; text-align:center;font-size:13px; line-height:30px;}
+.page a{	
+	border: 1px solid #ccc;
+	display: inline;
+	padding: 3px 10px 3px 10px;
+	margin-right: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	background: #fff;
+	text-decoration:none;
+	color:#999;
+	margin-top:20px;
+}
+.page a:hover{
+	border:1px solid #FF6600; 
+	background-color:#FF6600; 
+	color:#fff;
+}
+.page span{
+	border: 1px solid #FF6600;
+	display: inline;
+	padding: 3px 10px 3px 10px;
+	margin-right: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #FFEEE5;
+	color: #FF6600;}

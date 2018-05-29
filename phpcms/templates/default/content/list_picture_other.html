@@ -1,0 +1,23 @@
+{template "content","header"}
+<!--main-->
+<div class="main">
+	<div class="fl left">
+    	{template "content","sidebar"}
+    </div>
+    <div class="fr right">
+    	<div class="rt"><em class="fl">产品中心/<i>PRODUCTS</i></em><span class="fr">当前位置: <a href="{siteurl($siteid)}">首页</a>&nbsp;>&nbsp;{preg_replace('/( \> )$/', '', catpos($catid))}</span></div>
+        <div class="products">
+			{pc:content action="lists" catid="$catid" num="16" order="id DESC" page="$page"}
+        	<ul>
+				{loop $data $r}
+            	<li><a><img src="{$r[thumb]}" /><p>{$r[title]}</p></a></li>
+                {/loop}
+            </ul>
+            <div class="clear"></div>
+            <div class="page">{$pages}</div>
+			{/pc}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{template "content","footer"}

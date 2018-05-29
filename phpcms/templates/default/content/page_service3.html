@@ -1,0 +1,46 @@
+{template "content","header"}
+<div class="main">
+	<div class="fl left">
+    	{template "content","sidebar"}
+    </div>
+    <script type="text/javascript">
+	$(document).ready(function(){
+		var $tab_li = $('.page-tab span');
+		$tab_li.click(function(){
+			$(this).addClass('pg-tab').siblings().removeClass('pg-tab');
+			var index = $tab_li.index(this);
+			$('div.page-show > div').eq(index).show().siblings().hide();
+		});	
+	});
+	</script>
+    <div class="fr right">
+    	<div class="rt"><em class="fl">{$CAT[catname]}</em><span class="fr">当前位置: <a href="{siteurl($siteid)}">首页</a>&nbsp;>&nbsp;{preg_replace('/( \> )$/', '', catpos($catid))}</span></div>
+        <div class="page-tab"><span>服务承诺</span>|<span>服务流程</span>|<span class="pg-tab">服务标准</span>|<span>定制服务</span></div>
+        <div class="page-show">
+			{pc:get sql="SELECT * FROM v9_page where catid=37"}
+			{loop $data $key $r}
+        	<div class="hide">{$r[content]}</div>
+			{/loop}
+			{/pc}
+			{pc:get sql="SELECT * FROM v9_page where catid=38"}
+			{loop $data $key $r}
+        	<div class="hide">{$r[content]}</div>
+			{/loop}
+			{/pc}
+			{pc:get sql="SELECT * FROM v9_page where catid=41"}
+			{loop $data $key $r}
+        	<div>{$r[content]}</div>
+			{/loop}
+			{/pc}
+			{pc:get sql="SELECT * FROM v9_page where catid=42"}
+			{loop $data $key $r}
+        	<div class="hide">{$r[content]}</div>
+			{/loop}
+			{/pc}
+			
+            
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{template "content","footer"}

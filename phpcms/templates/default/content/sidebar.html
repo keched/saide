@@ -1,0 +1,18 @@
+    	<div class="cate">
+        	<h1><img src="{siteurl($siteid)}/style/img/cate-t.png" /></h1>
+            <dl>
+				{pc:content action="category" catid="4" num="20"}
+				{loop $data $r}
+					
+					<dt class="{$r[dts]}"><a href="{$r[url]}">{$r[catname]}</a></dt>
+					{loop subcat($r[catid]) $t}
+					<dd><a href="{$t[url]}">{$t[catname]}</a></dd>
+					{/loop}
+					
+				
+               
+                
+				{/loop}
+				{/pc}
+            </dl>
+        </div>

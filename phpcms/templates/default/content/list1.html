@@ -1,0 +1,48 @@
+{template "content","header"}
+<!--main-->
+<div class="main">
+	<div class="fl left">
+		{template "content","sidebar"}
+    </div>
+    <div class="fr right">
+    	<div class="rt"><em class="fl">新闻动态/<i>NEWS</i></em><span class="fr">当前位置: <a href="{siteurl($siteid)}">首页</a>&nbsp;>&nbsp;{preg_replace('/( \> )$/', '', catpos($catid))}</span></div>
+		<div class="page-tab"><span><a href="{$CATEGORYS[39]['url']}">公司新闻</a></span>|<span class="pg-tab"><a href="{$CATEGORYS[40]['url']}">行业资讯</a></span></div>
+        <div class="clear"></div>
+        <div class="news">
+        	<div class="news-top">
+				{pc:content action="position" posid="2" order="id" }
+				{loop $data $r}
+            	<div class="fl news-top-left"><img src="{$r[thumb]}" /></div>
+                <div class="fl news-top-right">
+
+                	<h2>{$r[title]}</h2>
+                    <p>{$r[description]}<a href="{$r[url]}">【详细】</a></p>
+                </div>
+				{/loop}
+				{/pc}
+            </div>
+            <div class="clear"></div>
+			{pc:content action="lists" catid="$catid" num="5" order="id DESC" page="$page"}
+            <ul>
+				{loop $data $r}
+            	<li>
+                		<div class="date">
+                            <div style=" background:#CCC; font-size:24px; color:#666;">{date('d',$r[inputtime])}</div>
+                            <div style="font-size:14px; color:#666;">{date('F',$r[inputtime])}</div>
+                        </div>
+                        <div class="news-info news-li">
+                        	<h4><a href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></h4>
+                            <p>{$r[description]}<a href="{$r[url]}">【详细】</a></p>
+                        </div>
+                </li>
+                {/loop}
+ 
+            </ul>
+            <div class="clear"></div>
+            <div class="page">{$pages}</div>
+			{/pc}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{template "content","footer"}

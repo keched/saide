@@ -1,0 +1,24 @@
+{template "content","header"}
+<!--main-->
+<div class="main">
+	<div class="fl left">
+    	{template "content","sidebar"}
+    </div>
+    <div class="fr right">
+    	<div class="rt"><em class="fl">搜索结果/<i>RESULT</i></em><span class="fr">当前位置: <a href="{siteurl($siteid)}">首页</a>&nbsp;>&nbsp;搜索结果</span></div>
+        <div class="products">
+			{pc:content action="lists" catid="$catid" num="16" order="id DESC" page="$page"}
+        	<ul>
+				{loop $data2 $i $r}
+            	<li><a href="{$r[url]}"><img src="{$r[thumb]}" /><p>{$r[title]}</p></a></li>
+                {/loop}
+				{if empty($data2)}未找到结果{/if}
+            </ul>
+            <div class="clear"></div>
+            <div class="page">{$pages}</div>
+			{/pc}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+{template "content","footer"}

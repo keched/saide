@@ -1,0 +1,27 @@
+{template "content","header"}
+<?php
+ if($child){
+     $child_arrary=explode(',',$arrchildid);
+        $to_url=$CATEGORYS[$child_arrary[1]][url];
+  echo "<script>window.location.href='".$to_url."'</script>";
+    }
+?>
+<div class="breadcrumb">
+<div>
+{loop subcat(48) $v}
+<a href="{$v[url]}"><span class="label label-info">{$v[catname]}</span></a>
+{/loop}
+</div>
+</div>
+<div style=" height:10px;"></div>
+
+<div class="breadcrumb">
+{$CAT[catname]}
+</div>
+
+<div class="show">
+
+<div class="content">{$content}</div>
+</div>
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "content","footer"}
